@@ -1,10 +1,6 @@
-# ember-loadscreen-V1
 
-A premium, GTA Online-inspired loading screen for FiveM.
 
-Parallax backdrops · rotating promo cards · music player · live server info ·
-queue support · real engine progress. One config file, no dependencies, no build
-step. Artwork included.
+https://chatgpt.com/backend-api/estuary/content?id=file_00000000c99481f6bf060928e2900a25&ts=496700&p=fs&cid=1&sig=b1cb1a516e3b89a1164f798aba0597730bf0412afdf904e8f3dc01198fcd7832&v=0
 
 ---
 
