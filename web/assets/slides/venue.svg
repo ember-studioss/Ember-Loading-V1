@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Nightclub venue</title>
+<defs>
+  <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#140b1e"/>
+    <stop offset="0.45" stop-color="#241132"/>
+    <stop offset="0.78" stop-color="#3d1a3f"/>
+    <stop offset="1"    stop-color="#160b1c"/>
+  </linearGradient>
+
+  <!-- a light beam: hot at the fixture, gone by the floor -->
+  <linearGradient id="beamA" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"   stop-color="#ffd9a0" stop-opacity="0.55"/>
+    <stop offset="0.5" stop-color="#ff9f6b" stop-opacity="0.18"/>
+    <stop offset="1"   stop-color="#ff7a5c" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="beamB" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"   stop-color="#b8d8ff" stop-opacity="0.45"/>
+    <stop offset="0.5" stop-color="#7fa8e8" stop-opacity="0.14"/>
+    <stop offset="1"   stop-color="#5c7fd0" stop-opacity="0"/>
+  </linearGradient>
+
+  <radialGradient id="stagehalo" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0"   stop-color="#ffd0a0" stop-opacity="0.55"/>
+    <stop offset="0.5" stop-color="#e8756b" stop-opacity="0.18"/>
+    <stop offset="1"   stop-color="#a03a6a" stop-opacity="0"/>
+  </radialGradient>
+
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#40203f"/>
+    <stop offset="1" stop-color="#0d0714"/>
+  </linearGradient>
+
+  <!-- one head-and-shoulders, reused across the crowd -->
+  <path id="head" d="M0 40 C0 18 8 6 22 6 C36 6 44 18 44 40 Z M22 -14 a13 13 0 1 1 0 26 a13 13 0 1 1 0 -26"/>
+</defs>
+
+<rect width="1280" height="720" fill="url(#room)"/>
+
+<!-- truss -->
+<rect x="0" y="86" width="1280" height="14" fill="#0b0610"/>
+<g fill="#0b0610">
+  <rect x="150" y="100" width="16" height="26"/>
+  <rect x="386" y="100" width="16" height="26"/>
+  <rect x="622" y="100" width="16" height="26"/>
+  <rect x="858" y="100" width="16" height="26"/>
+  <rect x="1094" y="100" width="16" height="26"/>
+</g>
+
+<!-- beams -->
+<g>
+  <path d="M150 126 L34 560 L292 560 Z"  fill="url(#beamA)"/>
+  <path d="M394 126 L250 540 L520 540 Z" fill="url(#beamB)"/>
+  <path d="M630 126 L520 580 L764 580 Z" fill="url(#beamA)"/>
+  <path d="M866 126 L748 540 L1018 540 Z" fill="url(#beamB)"/>
+  <path d="M1102 126 L982 560 L1240 560 Z" fill="url(#beamA)"/>
+</g>
+<g fill="#ffe0b8">
+  <circle cx="158" cy="126" r="7" opacity="0.9"/>
+  <circle cx="630" cy="126" r="7" opacity="0.9"/>
+  <circle cx="1102" cy="126" r="7" opacity="0.9"/>
+</g>
+<g fill="#cfe4ff">
+  <circle cx="394" cy="126" r="7" opacity="0.9"/>
+  <circle cx="866" cy="126" r="7" opacity="0.9"/>
+</g>
+
+<!-- stage -->
+<ellipse cx="640" cy="470" rx="360" ry="130" fill="url(#stagehalo)"/>
+<rect x="392" y="452" width="496" height="14" fill="#160c1e"/>
+<rect x="392" y="466" width="496" height="42" fill="#0d0714"/>
+
+<!-- the booth, and whoever is behind it -->
+<g fill="#0a0511">
+  <rect x="556" y="404" width="168" height="50" rx="4"/>
+  <path d="M604 404 C604 380 616 366 640 366 C664 366 676 380 676 404 Z"/>
+  <circle cx="640" cy="352" r="19"/>
+  <rect x="586" y="392" width="30" height="9" rx="4"/>
+  <rect x="664" y="392" width="30" height="9" rx="4"/>
+</g>
+<g fill="#ffcf94" opacity="0.75">
+  <rect x="572" y="424" width="10" height="5"/>
+  <rect x="590" y="424" width="10" height="5"/>
+  <rect x="608" y="424" width="10" height="5"/>
+  <rect x="682" y="424" width="10" height="5"/>
+  <rect x="700" y="424" width="10" height="5"/>
+</g>
+
+<!-- floor -->
+<rect x="0" y="508" width="1280" height="212" fill="url(#floor)"/>
+
+<!-- crowd, three ranks deep -->
+<g fill="#0a0512" opacity="0.75">
+  <g transform="translate(0,506) scale(0.86)">
+    <use href="#head" x="60"/>   <use href="#head" x="150"/> <use href="#head" x="238"/>
+    <use href="#head" x="330"/>  <use href="#head" x="424"/> <use href="#head" x="516"/>
+    <use href="#head" x="612"/>  <use href="#head" x="706"/> <use href="#head" x="800"/>
+    <use href="#head" x="894"/>  <use href="#head" x="988"/> <use href="#head" x="1082"/>
+    <use href="#head" x="1176"/> <use href="#head" x="1270"/>
+  </g>
+</g>
+<g fill="#07030d" opacity="0.9">
+  <g transform="translate(-40,556) scale(1.12)">
+    <use href="#head" x="40"/>   <use href="#head" x="152"/> <use href="#head" x="262"/>
+    <use href="#head" x="374"/>  <use href="#head" x="486"/> <use href="#head" x="598"/>
+    <use href="#head" x="710"/>  <use href="#head" x="822"/> <use href="#head" x="934"/>
+    <use href="#head" x="1046"/> <use href="#head" x="1158"/>
+  </g>
+</g>
+<g fill="#050209">
+  <g transform="translate(-60,622) scale(1.5)">
+    <use href="#head" x="20"/>  <use href="#head" x="168"/> <use href="#head" x="312"/>
+    <use href="#head" x="458"/> <use href="#head" x="604"/> <use href="#head" x="750"/>
+    <use href="#head" x="896"/>
+  </g>
+</g>
+</svg>

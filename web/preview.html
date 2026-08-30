@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loading screen — preview</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ===================================================================
+   PREVIEW CHROME
+   -------------------------------------------------------------------
+   Everything in this file is the harness, not the loading screen. The
+   screen itself is byte-identical to index.html — this only fakes the
+   messages FiveM would normally send.
+   =================================================================== */
+#pv {
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: rgba(10,11,14,0.92);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.6);
+  font: 12px/1.2 "Segoe UI", system-ui, sans-serif;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+#pv.is-tucked { bottom: -46px; }
+#pv:hover { bottom: 14px; }
+#pv button {
+  font: inherit;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 5px 9px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#pv button:hover  { background: rgba(255,255,255,0.18); }
+#pv button.is-on  { background: #ff8a3d; border-color: #ff8a3d; color: #140a04; font-weight: 600; }
+#pv .pv-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.16); margin: 0 2px; }
+#pv label { display: flex; align-items: center; gap: 5px; opacity: 0.75; }
+#pv input[type=range] { width: 92px; }
+#pv .pv-tag {
+  opacity: 0.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-right: 2px;
+}
+#pv-pct { font-variant-numeric: tabular-nums; min-width: 34px; text-align: right; opacity: 0.8; }
+</style>
+</head>
+<body>
+<!-- ===================================================================
+     The markup below is a copy of index.html. If you change one, change
+     the other — or just delete preview.html, nothing depends on it.
+     =================================================================== -->
+
+<div id="stage" class="stage is-booting">
+
+  <div class="backdrop" id="backdrop">
+    <div class="bd-fallback" id="bd-fallback"></div>
+    <div class="bd-parallax" id="bd-parallax">
+      <div class="bd-layer" id="bd-a">
+        <div class="bd-plane" data-depth="far"><div class="bd-img"></div></div>
+        <div class="bd-plane" data-depth="mid"><div class="bd-img"></div></div>
+        <div class="bd-plane" data-depth="near"><div class="bd-img"></div></div>
+      </div>
+      <div class="bd-layer" id="bd-b">
+        <div class="bd-plane" data-depth="far"><div class="bd-img"></div></div>
+        <div class="bd-plane" data-depth="mid"><div class="bd-img"></div></div>
+        <div class="bd-plane" data-depth="near"><div class="bd-img"></div></div>
+      </div>
+    </div>
+    <video class="bd-video" id="bd-video" muted playsinline hidden></video>
+    <div class="bd-grade"></div>
+    <div class="bd-vignette"></div>
+    <div class="bd-grain" id="bd-grain"></div>
+  </div>
+
+  <div class="hud" id="hud">
+
+    <header class="brand" id="brand">
+      <div class="brand-logo" id="brand-logo">
+        <img id="brand-logo-img" alt="" hidden>
+      </div>
+      <div class="brand-copy">
+        <h1 class="brand-name" id="brand-name">SERVER</h1>
+        <p class="brand-tagline" id="brand-tagline"></p>
+      </div>
+    </header>
+
+    <div class="rail" id="rail">
+    <aside class="info" id="info">
+      <div class="info-status">
+        <span class="info-dot" id="info-dot"></span>
+        <span class="info-status-label" id="info-status">CONNECTING</span>
+      </div>
+      <dl class="info-grid" id="info-grid">
+        <div class="info-row" id="row-players">
+          <dt>Players</dt>
+          <dd><span id="info-players">—</span></dd>
+        </div>
+        <div class="info-row" id="row-framework">
+          <dt>Framework</dt>
+          <dd id="info-framework">—</dd>
+        </div>
+        <div class="info-row" id="row-version">
+          <dt>Version</dt>
+          <dd id="info-version">—</dd>
+        </div>
+        <div class="info-row" id="row-region">
+          <dt>Region</dt>
+          <dd id="info-region">—</dd>
+        </div>
+      </dl>
+    </aside>
+
+    <aside class="queue" id="queue" hidden>
+      <div class="queue-label" id="queue-label">POSITION IN QUEUE</div>
+      <div class="queue-figure">
+        <span class="queue-hash">#</span><span class="queue-pos" id="queue-pos">—</span>
+        <span class="queue-total" id="queue-total"></span>
+      </div>
+      <div class="queue-eta" id="queue-eta" hidden></div>
+      <div class="queue-track"><i></i></div>
+      <p class="queue-message" id="queue-message"></p>
+    </aside>
+    </div>
+
+    <section class="feature" id="feature" aria-live="polite">
+      <div class="feature-card" id="feature-card">
+        <div class="feature-art" id="feature-art">
+          <div class="feature-art-img" id="feature-art-img"></div>
+          <div class="feature-art-scrim"></div>
+          <div class="feature-art-mono" id="feature-art-mono"></div>
+          <span class="feature-new" id="feature-new" hidden>NEW</span>
+        </div>
+
+        <div class="feature-body">
+          <div class="feature-eyebrow">
+            <span class="feature-kicker" id="feature-kicker">FEATURED</span>
+            <span class="feature-rule"></span>
+          </div>
+          <h2 class="feature-title" id="feature-title"></h2>
+          <p class="feature-desc" id="feature-desc"></p>
+          <a class="feature-cta" id="feature-cta" href="#" target="_blank" rel="noreferrer" hidden>
+            <span id="feature-cta-label">LEARN MORE</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="feature-timer"><i id="feature-timer-fill"></i></div>
+      </div>
+
+      <nav class="feature-dots" id="feature-dots" aria-label="Featured content"></nav>
+    </section>
+
+    <section class="player" id="player">
+      <div class="player-top">
+        <button class="player-art" id="player-art" type="button" aria-label="Play or pause">
+          <svg viewBox="0 0 24 24" class="player-art-note" aria-hidden="true">
+            <path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>
+          </svg>
+          <span class="player-art-resume" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+          </span>
+        </button>
+        <div class="player-meta">
+          <div class="player-label" id="player-state">NOW PLAYING</div>
+          <div class="player-title" id="track-title">—</div>
+          <div class="player-artist" id="track-artist">—</div>
+        </div>
+      </div>
+
+      <canvas class="player-viz" id="viz" aria-hidden="true"></canvas>
+
+      <div class="player-controls">
+        <button class="pbtn" id="btn-prev" type="button" aria-label="Previous track">
+          <svg viewBox="0 0 24 24"><path d="M7 6v12M19 6l-9 6 9 6z"/></svg>
+        </button>
+        <button class="pbtn pbtn-main" id="btn-play" type="button" aria-label="Play or pause">
+          <svg viewBox="0 0 24 24" class="ico-play"><path d="M8 5l11 7-11 7z"/></svg>
+          <svg viewBox="0 0 24 24" class="ico-pause"><path d="M8 5h3v14H8zM13 5h3v14h-3z"/></svg>
+        </button>
+        <button class="pbtn" id="btn-next" type="button" aria-label="Next track">
+          <svg viewBox="0 0 24 24"><path d="M17 6v12M5 6l9 6-9 6z"/></svg>
+        </button>
+
+        <div class="player-vol">
+          <button class="pbtn pbtn-ghost" id="btn-mute" type="button" aria-label="Mute">
+            <svg viewBox="0 0 24 24" class="ico-vol"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path class="w1" d="M15.5 9.2a4 4 0 010 5.6"/><path class="w2" d="M18 6.8a7.5 7.5 0 010 10.4"/></svg>
+            <svg viewBox="0 0 24 24" class="ico-muted"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+          </button>
+          <div class="vol-track" id="vol-track" role="slider" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" tabindex="0">
+            <i class="vol-fill" id="vol-fill"></i>
+            <i class="vol-knob" id="vol-knob"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-hint" id="player-hint" hidden>
+        <kbd>Space</kbd><span>pause</span>
+        <i></i>
+        <kbd>M</kbd><span>mute</span>
+      </div>
+    </section>
+
+    <footer class="dock" id="dock">
+
+      <div class="dock-top">
+        <div class="tip" id="tip">
+          <span class="tip-badge" id="tip-badge">TIP</span>
+          <span class="tip-text" id="tip-text"></span>
+        </div>
+
+        <div class="identity" id="identity">
+          <span class="identity-item" id="id-character" hidden>
+            <em>Character</em><b id="id-character-val">—</b>
+          </span>
+          <span class="identity-item" id="id-name" hidden>
+            <em>Player</em><b id="id-name-val">—</b>
+          </span>
+          <span class="identity-item" id="id-server" hidden>
+            <em>ID</em><b id="id-server-val">—</b>
+          </span>
+        </div>
+      </div>
+
+      <div class="bar" id="bar">
+        <i class="bar-fill" id="bar-fill"><b class="bar-head"></b></i>
+      </div>
+
+      <div class="dock-bottom">
+        <div class="loadline">
+          <span class="loadline-status" id="status">INITIALISING</span>
+          <span class="loadline-detail" id="detail"></span>
+        </div>
+
+        <div class="eta" id="eta" hidden><span id="eta-text"></span></div>
+
+        <div class="dock-right">
+          <ul class="social" id="social"></ul>
+          <div class="percent"><span id="percent">0</span><em>%</em></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <button class="audio-prompt" id="audio-prompt" type="button" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path d="M15.5 9.2a4 4 0 010 5.6"/><path d="M18 6.8a7.5 7.5 0 010 10.4"/></svg>
+    <span>Enable audio</span>
+  </button>
+
+  <div class="outro" id="outro" hidden>
+    <div class="outro-inner">
+      <div class="outro-logo" id="outro-logo"></div>
+      <div class="outro-name" id="outro-name">SERVER</div>
+      <div class="outro-sub" id="outro-sub">ENTERING LOS SANTOS</div>
+      <div class="outro-rule"><i></i></div>
+    </div>
+  </div>
+
+  <div class="blackout" id="blackout"></div>
+</div>
+
+<!-- ---------------- PREVIEW CONTROLS ---------------- -->
+<div id="pv">
+  <span class="pv-tag">Preview</span>
+  <button id="pv-play" class="is-on">Pause load</button>
+  <label><input type="range" id="pv-scrub" min="0" max="100" value="0"><span id="pv-pct">0%</span></label>
+  <span class="pv-sep"></span>
+  <button id="pv-bg">Next scene</button>
+  <button id="pv-slide">Next slide</button>
+  <span class="pv-sep"></span>
+  <button id="pv-queue">Queue</button>
+  <button id="pv-finish">Play outro</button>
+  <span class="pv-sep"></span>
+  <button id="pv-reload">Reload</button>
+  <button id="pv-hide">Hide bar</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/util.js"></script>
+<script src="js/backdrop.js"></script>
+<script src="js/slides.js"></script>
+<script src="js/tips.js"></script>
+<script src="js/music.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/bridge.js"></script>
+
+<script>
+/* ===================================================================
+   PREVIEW HARNESS
+   -------------------------------------------------------------------
+   Stands in for FiveM. Everything below only exists in this file.
+   =================================================================== */
+
+// The outro would normally call back into Lua. Here there is nobody to
+// call, so swallow it rather than throwing on every preview run.
+Bridge.finish = function () {
+  console.info('[preview] outro finished — the real screen would close here');
+};
+
+// Sample data, so panels that need the server are not permanently blank.
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    window.postMessage({ type: 'serverInfo', players: 38, maxPlayers: 64,
+                         status: 'ONLINE', statusTone: 'good' }, '*');
+    window.postMessage({ type: 'player', name: 'PreviewPlayer', serverId: 12 }, '*');
+    window.postMessage({ type: 'player', characterName: 'Jay Marlowe' }, '*');
+  }, 400);
+});
+</script>
+<script src="js/app.js"></script>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+
+  var pct = 0, running = true, queued = false, last = performance.now();
+
+  // Drive progress ourselves instead of the engine.
+  function frame(now) {
+    var dt = now - last; last = now;
+    if (running && !queued && pct < 100) {
+      // ~20s for a full run: fast enough to iterate, slow enough that
+      // the tips, slides and ETA behave like they would in game.
+      pct = Math.min(100, pct + dt * 0.005);
+      push();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function push() {
+    Progress.setReal(pct / 100);
+    $('#pv-scrub').value = Math.round(pct);
+    $('#pv-pct').textContent = Math.round(pct) + '%';
+  }
+
+  $('#pv-play').addEventListener('click', function () {
+    running = !running;
+    this.textContent = running ? 'Pause load' : 'Resume load';
+    this.classList.toggle('is-on', running);
+  });
+
+  $('#pv-scrub').addEventListener('input', function () {
+    // Scrubbing backwards cannot un-fill a monotonic bar, so reload for
+    // that. Forwards works fine and is what you usually want.
+    pct = Number(this.value);
+    push();
+  });
+
+  $('#pv-bg').addEventListener('click', function () { Backdrop.next(); });
+  $('#pv-slide').addEventListener('click', function () { Slides.next(); });
+
+  $('#pv-queue').addEventListener('click', function () {
+    queued = !queued;
+    this.classList.toggle('is-on', queued);
+    window.postMessage(queued
+      ? { type: 'queue', position: 7, total: 34, eta: 220 }
+      : { type: 'queue', position: 0 }, '*');
+  });
+
+  $('#pv-finish').addEventListener('click', function () {
+    queued = false;
+    window.postMessage({ type: 'queue', position: 0 }, '*');
+    pct = 100; push();
+    Progress.complete();
+  });
+
+  $('#pv-reload').addEventListener('click', function () { location.reload(); });
+
+  $('#pv-hide').addEventListener('click', function () {
+    $('#pv').classList.add('is-tucked');
+  });
+
+  requestAnimationFrame(frame);
+  console.info('[preview] running — this file is not used by the resource in game');
+})();
+</script>
+</body>
+</html>

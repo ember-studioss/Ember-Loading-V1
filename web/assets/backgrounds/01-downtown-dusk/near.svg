@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Downtown at dusk — near plane</title>
+<defs>
+  <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0a0c15"/>
+    <stop offset="1" stop-color="#04050a"/>
+  </linearGradient>
+
+  <path id="frondA" d="M0 0 C30 -22 70 -24 112 -3 C74 5 34 11 0 7 Z"/>
+  <path id="frondB" d="M0 0 C26 -16 60 -16 98 4  C64 8 30 12 0 6 Z"/>
+  <path id="frondC" d="M0 0 C24 -8  56 -2  92 26 C60 18 28 14 0 5 Z"/>
+
+  <g id="palm" fill="#04060a">
+    <path d="M-9 0 C-7 -62 5 -124 -5 -184 L9 -188 C16 -126 7 -62 9 0 Z"/>
+    <g transform="translate(2,-188)">
+      <g transform="rotate(-72)"><use href="#frondB"/></g>
+      <g transform="rotate(-40)"><use href="#frondA"/></g>
+      <g transform="rotate(-8)"><use href="#frondA"/></g>
+      <g transform="rotate(26)"><use href="#frondC"/></g>
+      <g transform="scale(-1,1)">
+        <g transform="rotate(-64)"><use href="#frondB"/></g>
+        <g transform="rotate(-32)"><use href="#frondA"/></g>
+        <g transform="rotate(2)"><use href="#frondA"/></g>
+        <g transform="rotate(34)"><use href="#frondC"/></g>
+      </g>
+      <circle cx="0" cy="-3" r="10"/>
+    </g>
+  </g>
+</defs>
+
+<!-- The near plane swings furthest, so it holds only the ground line
+     and the palms. Everything here is kept clear of the outer ~10%. -->
+<rect x="0" y="928" width="1920" height="152" fill="url(#ground)"/>
+<path d="M0 928 L1920 924 L1920 952 L0 960 Z" fill="#080a11"/>
+
+<use href="#palm" transform="translate(304,1014) scale(1.72)"/>
+<use href="#palm" transform="translate(438,1036) scale(1.18) scale(-1,1)"/>
+</svg>

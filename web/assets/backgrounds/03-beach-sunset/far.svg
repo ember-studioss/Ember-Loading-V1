@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Beach sunset — far plane</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#1d1136"/>
+    <stop offset="0.26" stop-color="#40204a"/>
+    <stop offset="0.46" stop-color="#8b3350"/>
+    <stop offset="0.62" stop-color="#d1553f"/>
+    <stop offset="0.75" stop-color="#f4893f"/>
+    <stop offset="0.86" stop-color="#ffc06a"/>
+    <stop offset="1"    stop-color="#ffe3ac"/>
+  </linearGradient>
+
+  <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0"    stop-color="#fff3d4" stop-opacity="0.95"/>
+    <stop offset="0.26" stop-color="#ffbe6e" stop-opacity="0.55"/>
+    <stop offset="1"    stop-color="#ff8a3d" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<circle cx="812" cy="648" r="450" fill="url(#sunglow)"/>
+<circle cx="812" cy="648" r="76" fill="#fff6e0" opacity="0.92"/>
+
+<path d="M0 620 L120 600 L250 622 L340 608 L430 626 L520 618 L560 646 L0 646 Z" fill="#2c1b34" opacity="0.75"/>
+<path d="M1500 634 L1610 612 L1720 630 L1830 616 L1920 632 L1920 654 L1500 654 Z" fill="#2c1b34" opacity="0.7"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Desert highway — far plane</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#141c3a"/>
+    <stop offset="0.28" stop-color="#2f2a4a"/>
+    <stop offset="0.50" stop-color="#6e4050"/>
+    <stop offset="0.68" stop-color="#bb6440"/>
+    <stop offset="0.84" stop-color="#eda155"/>
+    <stop offset="1"    stop-color="#ffd79b"/>
+  </linearGradient>
+
+  <radialGradient id="sunglow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0"    stop-color="#ffeec9" stop-opacity="0.9"/>
+    <stop offset="0.30" stop-color="#ffb268" stop-opacity="0.45"/>
+    <stop offset="1"    stop-color="#e8763a" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<circle cx="1006" cy="716" r="400" fill="url(#sunglow)"/>
+<circle cx="1006" cy="716" r="58" fill="#fff3d8" opacity="0.9"/>
+
+<path d="M0 690 L96 690 L120 646 L250 646 L272 692 L410 692 L410 720 L0 720 Z" fill="#3b2a45" opacity="0.62"/>
+<path d="M1470 692 L1500 636 L1660 636 L1684 690 L1810 690 L1836 660 L1920 660 L1920 726 L1470 726 Z" fill="#3b2a45" opacity="0.58"/>
+<path d="M560 706 L596 674 L700 674 L724 708 L820 708 L820 730 L560 730 Z" fill="#33253d" opacity="0.5"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Beach sunset — near plane</title>
+<defs>
+  <path id="frondA" d="M0 0 C30 -22 70 -24 112 -3 C74 5 34 11 0 7 Z"/>
+  <path id="frondB" d="M0 0 C26 -16 60 -16 98 4  C64 8 30 12 0 6 Z"/>
+  <path id="frondC" d="M0 0 C24 -8  56 -2  92 26 C60 18 28 14 0 5 Z"/>
+
+  <g id="palm" fill="#05070c">
+    <path d="M-9 0 C-7 -62 5 -124 -5 -184 L9 -188 C16 -126 7 -62 9 0 Z"/>
+    <g transform="translate(2,-188)">
+      <g transform="rotate(-72)"><use href="#frondB"/></g>
+      <g transform="rotate(-40)"><use href="#frondA"/></g>
+      <g transform="rotate(-8)"><use href="#frondA"/></g>
+      <g transform="rotate(26)"><use href="#frondC"/></g>
+      <g transform="scale(-1,1)">
+        <g transform="rotate(-64)"><use href="#frondB"/></g>
+        <g transform="rotate(-32)"><use href="#frondA"/></g>
+        <g transform="rotate(2)"><use href="#frondA"/></g>
+        <g transform="rotate(34)"><use href="#frondC"/></g>
+      </g>
+      <circle cx="0" cy="-3" r="10"/>
+    </g>
+  </g>
+</defs>
+
+<path d="M0 940 L420 902 L900 946 L1400 906 L1920 944 L1920 1080 L0 1080 Z" fill="#100c14"/>
+<path d="M0 986 L520 962 L1080 996 L1560 966 L1920 992 L1920 1080 L0 1080 Z" fill="#07060b"/>
+
+<use href="#palm" transform="translate(272,1010) scale(1.74)"/>
+<use href="#palm" transform="translate(408,1036) scale(1.2) scale(-1,1)"/>
+<use href="#palm" transform="translate(1660,1044) scale(1.62) scale(-1,1)"/>
+</svg>

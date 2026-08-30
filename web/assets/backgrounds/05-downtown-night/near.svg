@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Downtown at night — near plane</title>
+
+<!-- The rooftop we are standing on. Kept low and central so the
+     parallax swing never drags it off frame. -->
+<path d="M0 946 L1920 926 L1920 1080 L0 1080 Z" fill="#02040a"/>
+<g fill="#02040a">
+  <rect x="286" y="878" width="128" height="76" rx="4"/>
+  <rect x="306" y="856" width="88"  height="24" rx="3"/>
+  <rect x="1380" y="892" width="150" height="60" rx="4"/>
+  <rect x="1440" y="820" width="8"   height="76"/>
+  <rect x="1398" y="838" width="8"   height="58"/>
+  <path d="M1428 820 h34 v6 h-34 z"/>
+</g>
+<circle cx="1444" cy="812" r="5" fill="#ff6b5a" opacity="0.85"/>
+</svg>

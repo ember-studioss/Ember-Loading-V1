@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Desert highway — mid plane</title>
+<defs>
+  <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#4a3348"/>
+    <stop offset="0.28" stop-color="#2e2237"/>
+    <stop offset="1"    stop-color="#0b0910"/>
+  </linearGradient>
+  <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#3a3140"/>
+    <stop offset="1" stop-color="#0e0c14"/>
+  </linearGradient>
+  <linearGradient id="dust" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffb877" stop-opacity="0"/>
+    <stop offset="1" stop-color="#ffb877" stop-opacity="0.30"/>
+  </linearGradient>
+
+  <g id="pole" fill="#08070c">
+    <rect x="-3" y="-150" width="6" height="150"/>
+    <rect x="-34" y="-150" width="68" height="6"/>
+    <rect x="-24" y="-126" width="48" height="5"/>
+  </g>
+</defs>
+
+<path d="M0 742 L180 742 L210 700 L340 700 L366 744 L520 744 L520 800 L0 800 Z" fill="#241a2e"/>
+<path d="M1240 748 L1276 704 L1420 704 L1448 750 L1620 750 L1650 716 L1800 716 L1824 752 L1920 752 L1920 806 L1240 806 Z" fill="#241a2e"/>
+
+<path d="M0 748 L1920 748 L1920 1080 L0 1080 Z" fill="url(#sand)"/>
+<rect x="0" y="700" width="1920" height="200" fill="url(#dust)"/>
+
+<path d="M944 748 L1004 748 L1460 1080 L340 1080 Z" fill="url(#road)"/>
+<path d="M944 748 L950 748 L470 1080 L340 1080 Z" fill="#5a4a58" opacity="0.35"/>
+<path d="M998 748 L1004 748 L1460 1080 L1330 1080 Z" fill="#5a4a58" opacity="0.35"/>
+
+<g fill="#ffd9a2" opacity="0.55">
+  <rect x="972" y="754"  width="3"  height="7"/>
+  <rect x="971" y="774"  width="4"  height="10"/>
+  <rect x="970" y="804"  width="5"  height="14"/>
+  <rect x="969" y="846"  width="7"  height="19"/>
+  <rect x="967" y="900"  width="9"  height="26"/>
+  <rect x="965" y="968"  width="12" height="35"/>
+  <rect x="962" y="1046" width="16" height="34"/>
+</g>
+
+<use href="#pole" transform="translate(884,772) scale(0.30)"/>
+<use href="#pole" transform="translate(846,796) scale(0.46)"/>
+<use href="#pole" transform="translate(782,832) scale(0.70)"/>
+<use href="#pole" transform="translate(1082,780) scale(0.34)"/>
+<use href="#pole" transform="translate(1168,824) scale(0.58)"/>
+</svg>

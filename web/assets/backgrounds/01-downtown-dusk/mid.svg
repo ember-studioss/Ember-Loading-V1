@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Downtown at dusk — mid plane</title>
+<defs>
+  <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#ffb173" stop-opacity="0"/>
+    <stop offset="0.55" stop-color="#ffa96a" stop-opacity="0.16"/>
+    <stop offset="1"    stop-color="#ffbe86" stop-opacity="0.40"/>
+  </linearGradient>
+
+  <pattern id="w1" width="17" height="27" patternUnits="userSpaceOnUse">
+    <rect width="17" height="27" fill="#161d2b"/>
+    <rect x="4" y="6" width="6" height="9" fill="#ffd39a" opacity="0.62"/>
+  </pattern>
+  <pattern id="w2" width="13" height="21" patternUnits="userSpaceOnUse">
+    <rect width="13" height="21" fill="#131a27"/>
+    <rect x="3" y="5" width="5" height="7" fill="#ffc98d" opacity="0.42"/>
+  </pattern>
+  <pattern id="w3" width="21" height="31" patternUnits="userSpaceOnUse">
+    <rect width="21" height="31" fill="#111825"/>
+    <rect x="5" y="7" width="7" height="10" fill="#ffe0b3" opacity="0.28"/>
+  </pattern>
+</defs>
+
+<g>
+  <rect x="-10"  y="716" width="126" height="220" fill="url(#w2)"/>
+  <rect x="112"  y="608" width="80"  height="328" fill="url(#w1)"/>
+  <rect x="188"  y="756" width="96"  height="180" fill="#131a27"/>
+  <rect x="280"  y="650" width="118" height="286" fill="url(#w3)"/>
+  <rect x="394"  y="738" width="58"  height="198" fill="url(#w2)"/>
+  <rect x="448"  y="540" width="96"  height="396" fill="url(#w1)"/>
+  <rect x="470"  y="498" width="52"  height="46"  fill="#141b28"/>
+  <rect x="540"  y="700" width="86"  height="236" fill="#121926"/>
+  <rect x="622"  y="452" width="112" height="484" fill="url(#w3)"/>
+  <path d="M622 452 L678 384 L734 452 Z" fill="#141b28"/>
+  <rect x="730"  y="676" width="64"  height="260" fill="url(#w2)"/>
+  <rect x="790"  y="748" width="104" height="188" fill="url(#w1)"/>
+  <rect x="890"  y="590" width="70"  height="346" fill="#121926"/>
+  <rect x="956"  y="372" width="128" height="564" fill="url(#w1)"/>
+  <rect x="996"  y="306" width="48"  height="74"  fill="#141b28"/>
+  <rect x="1016" y="240" width="9"   height="70"  fill="#141b28"/>
+  <circle cx="1020" cy="236" r="5" fill="#ff6b5a" opacity="0.85"/>
+  <rect x="1080" y="704" width="74"  height="232" fill="url(#w3)"/>
+  <rect x="1250" y="782" width="88"  height="154" fill="#121926"/>
+  <rect x="1334" y="596" width="122" height="340" fill="url(#w2)"/>
+  <rect x="1452" y="500" width="104" height="436" fill="url(#w1)"/>
+  <path d="M1452 500 L1504 444 L1556 500 Z" fill="#141b28"/>
+  <rect x="1552" y="722" width="70"  height="214" fill="url(#w2)"/>
+  <rect x="1618" y="644" width="112" height="292" fill="url(#w3)"/>
+  <rect x="1726" y="762" width="62"  height="174" fill="#121926"/>
+  <rect x="1784" y="586" width="108" height="350" fill="url(#w1)"/>
+  <rect x="1888" y="712" width="60"  height="224" fill="url(#w2)"/>
+</g>
+
+<rect x="0" y="520" width="1920" height="424" fill="url(#haze)"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Blaine County — near plane</title>
+<defs>
+  <g id="pine" fill="#04070c">
+    <rect x="-2.5" y="-10" width="5" height="12"/>
+    <path d="M0 -66 L14 -32 L-14 -32 Z"/>
+    <path d="M0 -50 L18 -16 L-18 -16 Z"/>
+    <path d="M0 -34 L23 -4 L-23 -4 Z"/>
+  </g>
+</defs>
+
+<path d="M0 932 L300 906 L620 940 L940 902 L1260 942 L1580 906 L1920 938 L1920 1080 L0 1080 Z"
+      fill="#0c131f"/>
+
+<path d="M0 1002 L340 976 L700 1010 L1080 972 L1440 1012 L1780 980 L1920 998 L1920 1080 L0 1080 Z"
+      fill="#04070c"/>
+
+<use href="#pine" transform="translate(612,1006) scale(1.7)"/>
+<use href="#pine" transform="translate(690,1016) scale(2.2)"/>
+<use href="#pine" transform="translate(1288,1010) scale(1.9)"/>
+<use href="#pine" transform="translate(1372,1020) scale(1.45)"/>
+
+<g fill="#04070c">
+  <rect x="240"  y="1030" width="6" height="34"/>
+  <rect x="332"  y="1024" width="6" height="34"/>
+  <rect x="424"  y="1019" width="6" height="34"/>
+  <rect x="516"  y="1014" width="6" height="34"/>
+  <rect x="240"  y="1032" width="288" height="4" transform="rotate(-1.1,240,1032)"/>
+  <rect x="240"  y="1048" width="288" height="3" transform="rotate(-1.1,240,1048)"/>
+</g>
+</svg>

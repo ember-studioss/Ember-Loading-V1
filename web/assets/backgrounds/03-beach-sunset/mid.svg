@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Beach sunset — mid plane</title>
+<defs>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#b2603f"/>
+    <stop offset="0.14" stop-color="#6a3a49"/>
+    <stop offset="0.42" stop-color="#26243f"/>
+    <stop offset="1"    stop-color="#0a0d1c"/>
+  </linearGradient>
+
+  <linearGradient id="lanev" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#fff" stop-opacity="0.95"/>
+    <stop offset="0.45" stop-color="#fff" stop-opacity="0.42"/>
+    <stop offset="1"    stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="laneh" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0"    stop-color="#000" stop-opacity="0"/>
+    <stop offset="0.30" stop-color="#fff" stop-opacity="0.9"/>
+    <stop offset="0.50" stop-color="#fff" stop-opacity="1"/>
+    <stop offset="0.70" stop-color="#fff" stop-opacity="0.9"/>
+    <stop offset="1"    stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="lanemaskh"><rect x="560" y="648" width="504" height="432" fill="url(#laneh)"/></mask>
+  <mask id="lanemask">
+    <g mask="url(#lanemaskh)"><rect x="560" y="648" width="504" height="432" fill="url(#lanev)"/></g>
+  </mask>
+
+  <pattern id="chop" width="140" height="13" patternUnits="userSpaceOnUse">
+    <rect x="6"   y="4" width="52" height="1.8" fill="#ffd7a4" opacity="0.30"/>
+    <rect x="78"  y="9" width="34" height="1.5" fill="#ffc98d" opacity="0.20"/>
+  </pattern>
+  <linearGradient id="chopfade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#fff" stop-opacity="0.95"/>
+    <stop offset="0.55" stop-color="#fff" stop-opacity="0.28"/>
+    <stop offset="1"    stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="chopmask"><rect x="0" y="648" width="1920" height="330" fill="url(#chopfade)"/></mask>
+</defs>
+
+<rect x="0" y="648" width="1920" height="432" fill="url(#sea)"/>
+
+<g mask="url(#lanemask)">
+  <rect x="560" y="648" width="504" height="432" fill="#ffb469" opacity="0.42"/>
+  <g>
+    <rect x="742" y="662"  width="140" height="3" fill="#ffe7bd" opacity="0.7"/>
+    <rect x="726" y="678"  width="176" height="4" fill="#ffdcab" opacity="0.6"/>
+    <rect x="752" y="696"  width="126" height="3" fill="#ffe7bd" opacity="0.5"/>
+    <rect x="706" y="718"  width="220" height="5" fill="#ffd9a2" opacity="0.55"/>
+    <rect x="748" y="744"  width="150" height="4" fill="#ffe7bd" opacity="0.4"/>
+    <rect x="678" y="774"  width="278" height="6" fill="#ffd9a2" opacity="0.45"/>
+    <rect x="736" y="808"  width="184" height="4" fill="#ffe0b0" opacity="0.35"/>
+    <rect x="648" y="846"  width="340" height="7" fill="#ffd9a2" opacity="0.38"/>
+    <rect x="722" y="890"  width="212" height="5" fill="#ffe0b0" opacity="0.28"/>
+    <rect x="614" y="938"  width="410" height="8" fill="#ffd9a2" opacity="0.30"/>
+    <rect x="700" y="994"  width="256" height="6" fill="#ffe0b0" opacity="0.22"/>
+    <rect x="580" y="1046" width="480" height="9" fill="#ffd9a2" opacity="0.22"/>
+  </g>
+</g>
+
+<g mask="url(#chopmask)">
+  <rect x="0"    y="648" width="1920" height="330" fill="url(#chop)"/>
+  <rect x="-70"  y="656" width="1920" height="330" fill="url(#chop)" opacity="0.7"/>
+</g>
+
+<!-- pier -->
+<g fill="#08090f">
+  <rect x="1180" y="676" width="700" height="20"/>
+  <g>
+    <rect x="1214" y="694" width="9" height="82"/>
+    <rect x="1288" y="694" width="9" height="88"/>
+    <rect x="1362" y="694" width="9" height="94"/>
+    <rect x="1436" y="694" width="9" height="100"/>
+    <rect x="1510" y="694" width="9" height="106"/>
+    <rect x="1584" y="694" width="9" height="112"/>
+    <rect x="1658" y="694" width="9" height="118"/>
+    <rect x="1732" y="694" width="9" height="124"/>
+    <rect x="1806" y="694" width="9" height="130"/>
+  </g>
+  <rect x="1236" y="640" width="86" height="38"/>
+  <path d="M1236 640 L1279 616 L1322 640 Z"/>
+  <rect x="1660" y="648" width="120" height="30"/>
+  <g transform="translate(1466,566)">
+    <circle cx="0" cy="0" r="94" fill="none" stroke="#08090f" stroke-width="7"/>
+    <circle cx="0" cy="0" r="62" fill="none" stroke="#08090f" stroke-width="4"/>
+    <g stroke="#08090f" stroke-width="4">
+      <line x1="-94" y1="0"   x2="94"  y2="0"/>
+      <line x1="0"   y1="-94" x2="0"   y2="94"/>
+      <line x1="-66" y1="-66" x2="66"  y2="66"/>
+      <line x1="-66" y1="66"  x2="66"  y2="-66"/>
+    </g>
+    <circle cx="0" cy="0" r="11" fill="#08090f"/>
+    <path d="M-40 84 L0 8 L40 84 Z" fill="#08090f"/>
+  </g>
+  <rect x="1258" y="628" width="5" height="50"/>
+  <rect x="1554" y="628" width="5" height="50"/>
+  <rect x="1810" y="628" width="5" height="50"/>
+</g>
+<g fill="#ffd9a2" opacity="0.85">
+  <circle cx="1260.5" cy="626" r="6"/>
+  <circle cx="1556.5" cy="626" r="6"/>
+  <circle cx="1812.5" cy="626" r="6"/>
+</g>
+</svg>

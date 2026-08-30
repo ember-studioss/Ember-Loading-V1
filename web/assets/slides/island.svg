@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<title>Island expansion</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#0f3f5c"/>
+    <stop offset="0.34" stop-color="#2a7e94"/>
+    <stop offset="0.60" stop-color="#6cc0b4"/>
+    <stop offset="0.80" stop-color="#c8e6c4"/>
+    <stop offset="1"    stop-color="#ffe6b0"/>
+  </linearGradient>
+  <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#3fb4a8"/>
+    <stop offset="0.35" stop-color="#1d8a92"/>
+    <stop offset="1"    stop-color="#0c4a63"/>
+  </linearGradient>
+  <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0d7a4"/>
+    <stop offset="1" stop-color="#c9a976"/>
+  </linearGradient>
+  <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0"   stop-color="#fff3cf" stop-opacity="0.95"/>
+    <stop offset="0.3" stop-color="#ffd68a" stop-opacity="0.45"/>
+    <stop offset="1"   stop-color="#ffb45c" stop-opacity="0"/>
+  </radialGradient>
+
+  <path id="fA" d="M0 0 C24 -18 56 -19 90 -2 C59 4 27 9 0 6 Z"/>
+  <path id="fB" d="M0 0 C21 -13 48 -13 78 3  C51 6 24 10 0 5 Z"/>
+  <path id="fC" d="M0 0 C19 -6 45 -2 74 21 C48 14 22 11 0 4 Z"/>
+  <g id="palm" fill="#123028">
+    <path d="M-7 0 C-6 -50 4 -99 -4 -147 L7 -150 C13 -101 6 -50 7 0 Z"/>
+    <g transform="translate(2,-150)">
+      <g transform="rotate(-70)"><use href="#fB"/></g>
+      <g transform="rotate(-38)"><use href="#fA"/></g>
+      <g transform="rotate(-6)"><use href="#fA"/></g>
+      <g transform="rotate(28)"><use href="#fC"/></g>
+      <g transform="scale(-1,1)">
+        <g transform="rotate(-62)"><use href="#fB"/></g>
+        <g transform="rotate(-30)"><use href="#fA"/></g>
+        <g transform="rotate(4)"><use href="#fA"/></g>
+        <g transform="rotate(36)"><use href="#fC"/></g>
+      </g>
+      <circle cx="0" cy="-2" r="8"/>
+    </g>
+  </g>
+</defs>
+
+<rect width="1280" height="720" fill="url(#sky)"/>
+<circle cx="880" cy="392" r="230" fill="url(#sun)"/>
+<circle cx="880" cy="392" r="46" fill="#fff6dd" opacity="0.9"/>
+
+<!-- distant headland -->
+<path d="M0 388 L70 372 L150 390 L226 378 L300 396 L300 412 L0 412 Z" fill="#16515c" opacity="0.7"/>
+<path d="M1010 396 L1076 380 L1150 398 L1220 386 L1280 400 L1280 416 L1010 416 Z" fill="#16515c" opacity="0.6"/>
+
+<!-- sea -->
+<rect x="0" y="404" width="1280" height="316" fill="url(#sea)"/>
+<g opacity="0.35" fill="#d9f6f0">
+  <rect x="120" y="440" width="130" height="3"/>
+  <rect x="420" y="428" width="90"  height="2.5"/>
+  <rect x="700" y="452" width="160" height="3"/>
+  <rect x="980" y="434" width="110" height="2.5"/>
+  <rect x="240" y="472" width="180" height="3.5"/>
+  <rect x="820" y="482" width="140" height="3.5"/>
+</g>
+
+<!-- reef shallows -->
+<path d="M0 520 C220 496 420 542 660 520 C900 498 1100 544 1280 520 L1280 566 C1100 590 900 546 660 566 C420 588 220 542 0 566 Z"
+      fill="#63d6c4" opacity="0.35"/>
+
+<!-- beach -->
+<path d="M0 596 C210 566 430 608 660 588 C890 568 1090 606 1280 584 L1280 720 L0 720 Z" fill="url(#sand)"/>
+<path d="M0 632 C220 608 430 646 660 626 C890 606 1090 640 1280 622 L1280 720 L0 720 Z" fill="#e0c391" opacity="0.55"/>
+
+<!-- an outcrop with palms -->
+<path d="M980 604 C1046 560 1140 566 1200 592 C1240 610 1264 630 1280 640 L1280 720 L960 720 Z" fill="#1d4a3c"/>
+<use href="#palm" transform="translate(1090,600) scale(0.86)"/>
+<use href="#palm" transform="translate(1176,616) scale(0.66) scale(-1,1)"/>
+
+<use href="#palm" transform="translate(126,700) scale(1.24)"/>
+<use href="#palm" transform="translate(238,716) scale(0.92) scale(-1,1)"/>
+
+<!-- a boat at anchor -->
+<g fill="#0d3140">
+  <path d="M556 512 L700 512 L682 536 L574 536 Z"/>
+  <rect x="612" y="482" width="7" height="32"/>
+  <path d="M619 484 L664 508 L619 508 Z" fill="#e8f4ee" opacity="0.85"/>
+</g>
+</svg>

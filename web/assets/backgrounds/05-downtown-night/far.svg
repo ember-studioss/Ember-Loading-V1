@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>Downtown at night — far plane</title>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0"    stop-color="#02040a"/>
+    <stop offset="0.32" stop-color="#061020"/>
+    <stop offset="0.58" stop-color="#0d2138"/>
+    <stop offset="0.80" stop-color="#173650"/>
+    <stop offset="1"    stop-color="#2b5064"/>
+  </linearGradient>
+
+  <radialGradient id="glow" cx="0.5" cy="1" r="0.75">
+    <stop offset="0"    stop-color="#7fd0ff" stop-opacity="0.26"/>
+    <stop offset="0.42" stop-color="#3d86b8" stop-opacity="0.12"/>
+    <stop offset="1"    stop-color="#1d4a6a" stop-opacity="0"/>
+  </radialGradient>
+
+  <pattern id="s1" width="181" height="139" patternUnits="userSpaceOnUse">
+    <circle cx="31"  cy="47" r="1.5" fill="#dce6ff" opacity="0.7"/>
+    <circle cx="126" cy="21" r="1.1" fill="#cddaff" opacity="0.45"/>
+  </pattern>
+  <pattern id="s2" width="257" height="103" patternUnits="userSpaceOnUse">
+    <circle cx="71" cy="31" r="1.8" fill="#ffffff" opacity="0.5"/>
+  </pattern>
+  <linearGradient id="starfade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="starmask"><rect width="1920" height="480" fill="url(#starfade)"/></mask>
+
+  <pattern id="n4" width="52" height="74" patternUnits="userSpaceOnUse">
+    <rect width="52" height="74" fill="#070e1a"/>
+    <rect x="9" y="12" width="9" height="12" fill="#ffd9a0" opacity="0.16"/>
+  </pattern>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#sky)"/>
+
+<g mask="url(#starmask)">
+  <rect width="1920" height="480" fill="url(#s1)"/>
+  <rect width="1920" height="480" fill="url(#s2)"/>
+</g>
+
+<ellipse cx="960" cy="1020" rx="1180" ry="520" fill="url(#glow)"/>
+
+<g opacity="0.42">
+  <rect x="60"   y="602" width="96"  height="380" fill="url(#n4)"/>
+  <rect x="300"  y="558" width="110" height="424" fill="url(#n4)"/>
+  <rect x="620"  y="520" width="126" height="462" fill="url(#n4)"/>
+  <rect x="1010" y="546" width="104" height="436" fill="url(#n4)"/>
+  <rect x="1340" y="574" width="118" height="408" fill="url(#n4)"/>
+  <rect x="1680" y="540" width="112" height="442" fill="url(#n4)"/>
+</g>
+</svg>
