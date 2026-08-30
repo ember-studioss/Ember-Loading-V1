@@ -1,4 +1,4 @@
-# ember-loadscreen-online
+# ember-loadscreen-V1
 
 A premium, GTA Online-inspired loading screen for FiveM.
 
@@ -11,7 +11,7 @@ step. Artwork included.
 ## Install
 
 1. Drop the folder into `resources/`
-2. `ensure ember-loadscreen-online` in `server.cfg` — **early**, before your framework
+2. `ensure ember-loadscreen-V1` in `server.cfg` — **early**, before your framework
 3. Stop any other loading screen; only one resource may declare `loadscreen`
 4. Edit [`web/js/config.js`](web/js/config.js) — name, tagline, links. Done.
 
