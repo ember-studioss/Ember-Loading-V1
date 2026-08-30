@@ -1,6 +1,7 @@
 
 
-[url=https://ibb.co/4gCSXmn8][img]https://i.ibb.co/zHC2BnTX/3f61d9fb-c88a-47e0-9fe0-8a03a649a1f4.png[/img][/url]
+<img width="1983" height="793" alt="image" src="https://github.com/user-attachments/assets/d48cfdcd-2125-4e62-9df2-9ecfb2fff19c" />
+
 ---
 
 ## Install
