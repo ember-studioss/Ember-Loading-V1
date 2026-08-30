@@ -1,6 +1,6 @@
 
 
-https://ibb.co/4gCSXmn8
+[url=https://ibb.co/4gCSXmn8][img]https://i.ibb.co/zHC2BnTX/3f61d9fb-c88a-47e0-9fe0-8a03a649a1f4.png[/img][/url]
 ---
 
 ## Install
